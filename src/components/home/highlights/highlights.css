@@ -1,0 +1,679 @@
+/* Quick Highlights Section Styles */
+
+.highlights-section {
+  padding: 80px 0;
+  background: linear-gradient(135deg, #0F1419 0%, #1B263B 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+.highlights-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* Section Header */
+.highlights-header {
+  text-align: center;
+  margin-bottom: 60px;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.highlights-title {
+  font-size: 48px;
+  font-weight: 700;
+  color: #E0E1DD;
+  margin-bottom: 16px;
+  line-height: 1.1;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  background: linear-gradient(135deg, #E0E1DD 0%, #E09F3E 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.highlights-subtitle {
+  font-size: 20px;
+  color: rgba(224, 225, 221, 0.8);
+  line-height: 1.5;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-weight: 400;
+}
+
+.highlights-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 32px;
+  margin-top: 40px;
+}
+
+/* Card Base Styles */
+.highlight-card {
+  position: relative;
+  background: rgba(27, 38, 59, 0.85);
+  backdrop-filter: blur(10px);
+  border-radius: 16px;
+  padding: 32px;
+  min-height: 320px;
+  cursor: pointer;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  transform-style: preserve-3d;
+  perspective: 1000px;
+  border: 1px solid rgba(65, 90, 119, 0.2);
+  overflow: hidden;
+}
+
+.highlight-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, rgba(224, 159, 62, 0.1) 0%, transparent 50%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+}
+
+/* 3D Layered Background */
+.card-3d-layers {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  pointer-events: none;
+}
+
+.layer-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(circle at 30% 20%, rgba(224, 159, 62, 0.05) 0%, transparent 50%);
+  border-radius: 16px;
+}
+
+.layer-shapes {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  overflow: hidden;
+}
+
+.shape-1, .shape-2, .shape-3 {
+  position: absolute;
+  border-radius: 50%;
+  background: linear-gradient(135deg, rgba(224, 159, 62, 0.1), rgba(65, 90, 119, 0.1));
+  opacity: 0.3;
+  animation: float 6s ease-in-out infinite;
+}
+
+.shape-1 {
+  width: 60px;
+  height: 60px;
+  top: 20px;
+  right: 30px;
+  animation-delay: 0s;
+}
+
+.shape-2 {
+  width: 40px;
+  height: 40px;
+  bottom: 40px;
+  left: 20px;
+  animation-delay: 2s;
+}
+
+.shape-3 {
+  width: 30px;
+  height: 30px;
+  top: 50%;
+  right: 20px;
+  animation-delay: 4s;
+}
+
+/* Card Content */
+.card-content {
+  position: relative;
+  z-index: 2;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.card-icon-container {
+  margin-bottom: 24px;
+}
+
+.card-icon {
+  width: 80px;
+  height: 80px;
+  position: relative;
+  margin-bottom: 20px;
+}
+
+/* Web Development Icon */
+.web-dev-illustration {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.browser-window {
+  width: 100%;
+  height: 100%;
+  background: rgba(224, 159, 62, 0.1);
+  border-radius: 8px;
+  border: 1px solid rgba(224, 159, 62, 0.3);
+  overflow: hidden;
+  position: relative;
+}
+
+.browser-header {
+  height: 20px;
+  background: rgba(65, 90, 119, 0.3);
+  display: flex;
+  align-items: center;
+  padding: 0 8px;
+}
+
+.browser-dots {
+  display: flex;
+  gap: 4px;
+}
+
+.browser-dots span {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: rgba(224, 159, 62, 0.6);
+}
+
+.browser-content {
+  padding: 12px;
+  height: calc(100% - 20px);
+}
+
+.code-line {
+  height: 4px;
+  background: rgba(224, 159, 62, 0.4);
+  margin-bottom: 6px;
+  border-radius: 2px;
+  animation: codeShimmer 2s ease-in-out infinite;
+}
+
+.code-line:nth-child(2) {
+  width: 80%;
+  animation-delay: 0.5s;
+}
+
+.code-line:nth-child(3) {
+  width: 60%;
+  animation-delay: 1s;
+}
+
+/* AI Tools Icon */
+.ai-tools-illustration {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.ai-sphere {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.sphere-core {
+  width: 40px;
+  height: 40px;
+  background: radial-gradient(circle, rgba(224, 159, 62, 0.8), rgba(224, 159, 62, 0.4));
+  border-radius: 50%;
+  position: relative;
+  animation: pulse 3s ease-in-out infinite;
+}
+
+.sphere-rings {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+.ring {
+  position: absolute;
+  border: 2px solid rgba(224, 159, 62, 0.3);
+  border-radius: 50%;
+  animation: rotate 8s linear infinite;
+}
+
+.ring-1 {
+  width: 60px;
+  height: 60px;
+  top: 10px;
+  left: 10px;
+  animation-delay: 0s;
+}
+
+.ring-2 {
+  width: 70px;
+  height: 70px;
+  top: 5px;
+  left: 5px;
+  animation-delay: -2s;
+}
+
+.ring-3 {
+  width: 80px;
+  height: 80px;
+  top: 0;
+  left: 0;
+  animation-delay: -4s;
+}
+
+.ai-nodes {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+.node {
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  background: rgba(224, 159, 62, 0.8);
+  border-radius: 50%;
+  animation: nodeGlow 2s ease-in-out infinite;
+}
+
+.node-1 { top: 10px; left: 20px; animation-delay: 0s; }
+.node-2 { top: 20px; right: 15px; animation-delay: 0.5s; }
+.node-3 { bottom: 15px; left: 25px; animation-delay: 1s; }
+.node-4 { bottom: 25px; right: 10px; animation-delay: 1.5s; }
+
+/* Automation Icon */
+.automation-illustration {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.gear-system {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.gear {
+  position: absolute;
+  border: 3px solid rgba(224, 159, 62, 0.6);
+  border-radius: 50%;
+  animation: gearRotate 4s linear infinite;
+}
+
+.gear::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 8px;
+  height: 8px;
+  background: rgba(224, 159, 62, 0.8);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.gear-1 {
+  width: 50px;
+  height: 50px;
+  top: 20px;
+  left: 20px;
+  animation-delay: 0s;
+}
+
+.gear-2 {
+  width: 40px;
+  height: 40px;
+  top: 40px;
+  right: 25px;
+  animation-delay: -1s;
+}
+
+.gear-3 {
+  width: 35px;
+  height: 35px;
+  bottom: 25px;
+  left: 30px;
+  animation-delay: -2s;
+}
+
+.pipeline {
+  position: absolute;
+  bottom: 15px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 8px;
+}
+
+.pipe-segment {
+  width: 20px;
+  height: 8px;
+  background: rgba(224, 159, 62, 0.4);
+  border-radius: 4px;
+  animation: pipeFlow 2s ease-in-out infinite;
+}
+
+.pipe-segment:nth-child(2) { animation-delay: 0.5s; }
+.pipe-segment:nth-child(3) { animation-delay: 1s; }
+
+/* Custom Solutions Icon */
+.custom-solutions-illustration {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.puzzle-system {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.puzzle-piece {
+  position: absolute;
+  background: rgba(224, 159, 62, 0.6);
+  border-radius: 4px;
+  animation: puzzleAssemble 3s ease-in-out infinite;
+}
+
+.piece-1 {
+  width: 25px;
+  height: 25px;
+  top: 20px;
+  left: 20px;
+  animation-delay: 0s;
+}
+
+.piece-2 {
+  width: 25px;
+  height: 25px;
+  top: 20px;
+  right: 20px;
+  animation-delay: 0.5s;
+}
+
+.piece-3 {
+  width: 25px;
+  height: 25px;
+  bottom: 20px;
+  left: 20px;
+  animation-delay: 1s;
+}
+
+.piece-4 {
+  width: 25px;
+  height: 25px;
+  bottom: 20px;
+  right: 20px;
+  animation-delay: 1.5s;
+}
+
+/* Card Text */
+.card-text {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.card-title {
+  font-size: 24px;
+  font-weight: 700;
+  color: #E0E1DD;
+  margin-bottom: 12px;
+  line-height: 1.2;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+.card-description {
+  font-size: 16px;
+  color: rgba(224, 225, 221, 0.85);
+  line-height: 1.5;
+  margin-bottom: 20px;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+.card-micro-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  color: #E09F3E;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  transition: all 0.3s ease;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.cta-arrow {
+  transition: transform 0.3s ease;
+}
+
+/* Hover Effects */
+.highlight-card:hover {
+  transform: translateY(-8px) scale(1.02) rotateX(2deg) rotateY(2deg);
+  box-shadow: 
+    0 20px 40px rgba(0, 0, 0, 0.3),
+    0 0 0 1px rgba(224, 159, 62, 0.2),
+    0 0 20px rgba(224, 159, 62, 0.1);
+}
+
+.highlight-card:hover::before {
+  opacity: 1;
+}
+
+.highlight-card:hover .card-micro-cta {
+  color: #E09F3E;
+}
+
+.highlight-card:hover .cta-arrow {
+  transform: translateX(4px);
+}
+
+/* Focus States */
+.highlight-card:focus {
+  outline: 2px solid #E09F3E;
+  outline-offset: 2px;
+}
+
+.highlight-card:focus-visible {
+  transform: translateY(-4px) scale(1.01);
+}
+
+/* Animations */
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+}
+
+@keyframes codeShimmer {
+  0%, 100% { opacity: 0.4; }
+  50% { opacity: 0.8; }
+}
+
+@keyframes pulse {
+  0%, 100% { transform: scale(1); opacity: 0.8; }
+  50% { transform: scale(1.1); opacity: 1; }
+}
+
+@keyframes rotate {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes nodeGlow {
+  0%, 100% { opacity: 0.6; transform: scale(1); }
+  50% { opacity: 1; transform: scale(1.2); }
+}
+
+@keyframes gearRotate {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes pipeFlow {
+  0%, 100% { opacity: 0.4; }
+  50% { opacity: 0.8; }
+}
+
+@keyframes puzzleAssemble {
+  0%, 100% { transform: scale(1) rotate(0deg); }
+  50% { transform: scale(1.1) rotate(5deg); }
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .highlights-header {
+    margin-bottom: 50px;
+  }
+  
+  .highlights-title {
+    font-size: 40px;
+  }
+  
+  .highlights-subtitle {
+    font-size: 18px;
+  }
+  
+  .highlights-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+  }
+  
+  .highlight-card {
+    padding: 24px;
+    min-height: 280px;
+  }
+  
+  .card-title {
+    font-size: 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .highlights-section {
+    padding: 60px 0;
+  }
+  
+  .highlights-header {
+    margin-bottom: 40px;
+  }
+  
+  .highlights-title {
+    font-size: 32px;
+  }
+  
+  .highlights-subtitle {
+    font-size: 16px;
+  }
+  
+  .highlights-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  
+  .highlight-card {
+    padding: 20px;
+    min-height: 260px;
+  }
+  
+  .card-title {
+    font-size: 18px;
+  }
+  
+  .card-description {
+    font-size: 14px;
+  }
+  
+  /* Reduce 3D effects on mobile */
+  .highlight-card:hover {
+    transform: translateY(-4px) scale(1.01);
+  }
+}
+
+@media (max-width: 480px) {
+  .highlights-container {
+    padding: 0 16px;
+  }
+  
+  .highlights-header {
+    margin-bottom: 30px;
+  }
+  
+  .highlights-title {
+    font-size: 28px;
+  }
+  
+  .highlights-subtitle {
+    font-size: 14px;
+  }
+  
+  .highlight-card {
+    padding: 16px;
+    min-height: 240px;
+  }
+  
+  .card-icon {
+    width: 60px;
+    height: 60px;
+  }
+}
+
+/* Reduced Motion Support */
+@media (prefers-reduced-motion: reduce) {
+  .highlight-card,
+  .highlight-card:hover,
+  .highlight-card:focus-visible {
+    transform: none;
+    transition: opacity 0.3s ease;
+  }
+  
+  .highlight-card:hover {
+    opacity: 0.9;
+  }
+  
+  .shape-1, .shape-2, .shape-3,
+  .code-line,
+  .sphere-core,
+  .ring,
+  .node,
+  .gear,
+  .pipe-segment,
+  .puzzle-piece {
+    animation: none;
+  }
+} 
