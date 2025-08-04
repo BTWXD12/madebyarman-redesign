@@ -1,6 +1,11 @@
 // Featured Projects Animations
 
 export function featuredProjectsAnimations() {
+  // Check if we're on the client side
+  if (typeof window === 'undefined' || typeof document === 'undefined') {
+    return;
+  }
+
   const cards = document.querySelectorAll('.project-card');
   
   // Intersection Observer for entrance animations
@@ -31,6 +36,11 @@ export function featuredProjectsAnimations() {
 }
 
 export function projectCardHoverEffects() {
+  // Check if we're on the client side
+  if (typeof window === 'undefined' || typeof document === 'undefined') {
+    return;
+  }
+
   const cards = document.querySelectorAll('.project-card');
   
   cards.forEach(card => {
@@ -106,6 +116,11 @@ export function projectCardHoverEffects() {
 
 // Micro-interactions for CTA buttons
 export function projectCtaInteractions() {
+  // Check if we're on the client side
+  if (typeof window === 'undefined' || typeof document === 'undefined') {
+    return;
+  }
+
   const primaryCtas = document.querySelectorAll('.primary-cta');
   const secondaryCtas = document.querySelectorAll('.secondary-cta');
   
@@ -179,6 +194,11 @@ export function projectCtaInteractions() {
 
 // Thumbnail overlay interactions
 export function thumbnailOverlayInteractions() {
+  // Check if we're on the client side
+  if (typeof window === 'undefined' || typeof document === 'undefined') {
+    return;
+  }
+
   const overlays = document.querySelectorAll('.thumbnail-overlay');
   
   overlays.forEach(overlay => {
@@ -222,6 +242,11 @@ export function thumbnailOverlayInteractions() {
 
 // Tech tag hover effects
 export function techTagInteractions() {
+  // Check if we're on the client side
+  if (typeof window === 'undefined' || typeof document === 'undefined') {
+    return;
+  }
+
   const techTags = document.querySelectorAll('.tech-tag');
   
   techTags.forEach(tag => {
@@ -242,6 +267,11 @@ export function techTagInteractions() {
 
 // Status badge animations
 export function statusBadgeAnimations() {
+  // Check if we're on the client side
+  if (typeof window === 'undefined' || typeof document === 'undefined') {
+    return;
+  }
+
   const badges = document.querySelectorAll('.status-badge');
   
   badges.forEach(badge => {
@@ -258,6 +288,11 @@ export function statusBadgeAnimations() {
 
 // View all projects button interactions
 export function viewAllProjectsInteractions() {
+  // Check if we're on the client side
+  if (typeof window === 'undefined' || typeof document === 'undefined') {
+    return;
+  }
+
   const viewAllButton = document.querySelector('.view-all-button');
   
   if (viewAllButton) {
@@ -299,6 +334,11 @@ export function viewAllProjectsInteractions() {
 
 // Project preview animations
 export function projectPreviewAnimations() {
+  // Check if we're on the client side
+  if (typeof window === 'undefined' || typeof document === 'undefined') {
+    return;
+  }
+
   // Dashboard animations
   const chartBars = document.querySelectorAll('.chart-bar');
   chartBars.forEach((bar, index) => {
@@ -335,6 +375,11 @@ export function projectPreviewAnimations() {
 
 // Performance optimization
 export function optimizeProjectPerformance() {
+  // Check if we're on the client side
+  if (typeof window === 'undefined' || typeof document === 'undefined') {
+    return;
+  }
+
   // Throttle mousemove events
   let ticking = false;
   
@@ -384,6 +429,11 @@ export function optimizeProjectPerformance() {
 
 // Initialize all animations
 export function initFeaturedProjectsAnimations() {
+  // Check if we're on the client side
+  if (typeof window === 'undefined' || typeof document === 'undefined') {
+    return;
+  }
+
   featuredProjectsAnimations();
   projectCardHoverEffects();
   projectCtaInteractions();
@@ -406,9 +456,11 @@ const rippleCSS = `
 `;
 
 // Inject ripple CSS if not already present
-if (!document.querySelector('#featured-projects-ripple-css')) {
-  const style = document.createElement('style');
-  style.id = 'featured-projects-ripple-css';
-  style.textContent = rippleCSS;
-  document.head.appendChild(style);
+if (typeof window !== 'undefined' && typeof document !== 'undefined') {
+  if (!document.querySelector('#featured-projects-ripple-css')) {
+    const style = document.createElement('style');
+    style.id = 'featured-projects-ripple-css';
+    style.textContent = rippleCSS;
+    document.head.appendChild(style);
+  }
 } 

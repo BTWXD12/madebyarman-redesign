@@ -1,6 +1,11 @@
 // About Snapshot Animations
 
 export function aboutSnapshotAnimations() {
+  // Check if we're on the client side
+  if (typeof window === 'undefined' || typeof document === 'undefined') {
+    return;
+  }
+
   // Entrance animations
   const observerOptions = {
     threshold: 0.1,
@@ -200,6 +205,11 @@ export function aboutSnapshotAnimations() {
 
 // Utility function for smooth scrolling to about page
 export function scrollToAbout() {
+  // Check if we're on the client side
+  if (typeof window === 'undefined' || typeof document === 'undefined') {
+    return;
+  }
+
   const aboutLink = document.querySelector('.snapshot-cta');
   if (aboutLink) {
     aboutLink.addEventListener('click', (e) => {
@@ -222,7 +232,9 @@ export function scrollToAbout() {
 }
 
 // Initialize all animations when DOM is loaded
-document.addEventListener('DOMContentLoaded', () => {
-  aboutSnapshotAnimations();
-  scrollToAbout();
-}); 
+if (typeof window !== 'undefined' && typeof document !== 'undefined') {
+  document.addEventListener('DOMContentLoaded', () => {
+    aboutSnapshotAnimations();
+    scrollToAbout();
+  });
+} 

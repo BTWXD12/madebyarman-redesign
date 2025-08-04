@@ -1,6 +1,11 @@
 // Quick Highlights Animations
 
 export function highlightsAnimations() {
+  // Check if we're on the client side
+  if (typeof window === 'undefined' || typeof document === 'undefined') {
+    return;
+  }
+
   const cards = document.querySelectorAll('.highlight-card');
   
   // Intersection Observer for entrance animations
@@ -31,6 +36,11 @@ export function highlightsAnimations() {
 }
 
 export function cardHoverEffects() {
+  // Check if we're on the client side
+  if (typeof window === 'undefined' || typeof document === 'undefined') {
+    return;
+  }
+
   const cards = document.querySelectorAll('.highlight-card');
   
   cards.forEach(card => {
@@ -91,6 +101,11 @@ export function cardHoverEffects() {
 
 // Micro-interactions for CTA buttons
 export function ctaInteractions() {
+  // Check if we're on the client side
+  if (typeof window === 'undefined' || typeof document === 'undefined') {
+    return;
+  }
+
   const ctaButtons = document.querySelectorAll('.card-micro-cta');
   
   ctaButtons.forEach(button => {
@@ -156,6 +171,11 @@ export function ctaInteractions() {
 
 // Icon-specific animations
 export function iconAnimations() {
+  // Check if we're on the client side
+  if (typeof window === 'undefined' || typeof document === 'undefined') {
+    return;
+  }
+
   // Web Dev code shimmer effect
   const codeLines = document.querySelectorAll('.code-line');
   codeLines.forEach((line, index) => {
@@ -223,6 +243,11 @@ export function optimizePerformance() {
 
 // Initialize all animations
 export function initHighlightsAnimations() {
+  // Check if we're on the client side
+  if (typeof window === 'undefined' || typeof document === 'undefined') {
+    return;
+  }
+
   highlightsAnimations();
   cardHoverEffects();
   ctaInteractions();
@@ -241,9 +266,11 @@ const rippleCSS = `
 `;
 
 // Inject ripple CSS if not already present
-if (!document.querySelector('#highlights-ripple-css')) {
-  const style = document.createElement('style');
-  style.id = 'highlights-ripple-css';
-  style.textContent = rippleCSS;
-  document.head.appendChild(style);
+if (typeof window !== 'undefined' && typeof document !== 'undefined') {
+  if (!document.querySelector('#highlights-ripple-css')) {
+    const style = document.createElement('style');
+    style.id = 'highlights-ripple-css';
+    style.textContent = rippleCSS;
+    document.head.appendChild(style);
+  }
 } 

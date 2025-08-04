@@ -1,6 +1,11 @@
 // Featured Tools Animations
 
 export function featuredToolsAnimations() {
+  // Check if we're on the client side
+  if (typeof window === 'undefined' || typeof document === 'undefined') {
+    return;
+  }
+
   const cards = document.querySelectorAll('.tool-card');
   
   // Intersection Observer for entrance animations
@@ -31,6 +36,11 @@ export function featuredToolsAnimations() {
 }
 
 export function toolCardHoverEffects() {
+  // Check if we're on the client side
+  if (typeof window === 'undefined' || typeof document === 'undefined') {
+    return;
+  }
+
   const cards = document.querySelectorAll('.tool-card');
   
   cards.forEach(card => {
@@ -91,6 +101,11 @@ export function toolCardHoverEffects() {
 
 // Micro-interactions for CTA buttons
 export function toolCtaInteractions() {
+  // Check if we're on the client side
+  if (typeof window === 'undefined' || typeof document === 'undefined') {
+    return;
+  }
+
   const primaryCtas = document.querySelectorAll('.primary-cta');
   const secondaryCtas = document.querySelectorAll('.secondary-cta');
   
@@ -167,6 +182,11 @@ export function toolCtaInteractions() {
 
 // Visual preview animations
 export function visualPreviewAnimations() {
+  // Check if we're on the client side
+  if (typeof window === 'undefined' || typeof document === 'undefined') {
+    return;
+  }
+
   // Form generator animations
   const formFields = document.querySelectorAll('.field-label, .field-input, .submit-button');
   formFields.forEach((field, index) => {
@@ -194,6 +214,11 @@ export function visualPreviewAnimations() {
 
 // Status badge animations
 export function statusBadgeAnimations() {
+  // Check if we're on the client side
+  if (typeof window === 'undefined' || typeof document === 'undefined') {
+    return;
+  }
+
   const badges = document.querySelectorAll('.status-badge');
   
   badges.forEach(badge => {
@@ -210,6 +235,11 @@ export function statusBadgeAnimations() {
 
 // View all tools button interactions
 export function viewAllToolsInteractions() {
+  // Check if we're on the client side
+  if (typeof window === 'undefined' || typeof document === 'undefined') {
+    return;
+  }
+
   const viewAllButton = document.querySelector('.view-all-button');
   
   if (viewAllButton) {
@@ -251,6 +281,11 @@ export function viewAllToolsInteractions() {
 
 // Performance optimization
 export function optimizeToolPerformance() {
+  // Check if we're on the client side
+  if (typeof window === 'undefined' || typeof document === 'undefined') {
+    return;
+  }
+
   // Throttle mousemove events
   let ticking = false;
   
@@ -285,6 +320,11 @@ export function optimizeToolPerformance() {
 
 // Initialize all animations
 export function initFeaturedToolsAnimations() {
+  // Check if we're on the client side
+  if (typeof window === 'undefined' || typeof document === 'undefined') {
+    return;
+  }
+
   featuredToolsAnimations();
   toolCardHoverEffects();
   toolCtaInteractions();
@@ -305,9 +345,11 @@ const rippleCSS = `
 `;
 
 // Inject ripple CSS if not already present
-if (!document.querySelector('#featured-tools-ripple-css')) {
-  const style = document.createElement('style');
-  style.id = 'featured-tools-ripple-css';
-  style.textContent = rippleCSS;
-  document.head.appendChild(style);
+if (typeof window !== 'undefined' && typeof document !== 'undefined') {
+  if (!document.querySelector('#featured-tools-ripple-css')) {
+    const style = document.createElement('style');
+    style.id = 'featured-tools-ripple-css';
+    style.textContent = rippleCSS;
+    document.head.appendChild(style);
+  }
 } 

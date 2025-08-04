@@ -53,7 +53,7 @@ export default function AboutSnapshot() {
             {/* Left Column - Text Content */}
             <div className="snapshot-text-column" ref={textRef}>
               <h2 className="snapshot-headline">
-                I'm Arman. Maker of Web & AI Tools.
+                I&apos;m Arman. Maker of Web & AI Tools.
               </h2>
               
               <p className="snapshot-intro">

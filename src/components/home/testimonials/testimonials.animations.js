@@ -1,6 +1,11 @@
 // Testimonials Animations
 
 export function testimonialsAnimations() {
+  // Check if we're on the client side
+  if (typeof window === 'undefined' || typeof document === 'undefined') {
+    return;
+  }
+
   const cards = document.querySelectorAll('.testimonial-glass');
   
   // Intersection Observer for entrance animations
@@ -44,6 +49,11 @@ export function testimonialsAnimations() {
 
 // Glass card hover effects
 export function cardHoverEffects() {
+  // Check if we're on the client side
+  if (typeof window === 'undefined' || typeof document === 'undefined') {
+    return;
+  }
+
   const cards = document.querySelectorAll('.testimonial-glass');
   
   cards.forEach(card => {
@@ -104,6 +114,11 @@ export function cardHoverEffects() {
 
 // Micro-interactions for CTA link
 export function ctaInteractions() {
+  // Check if we're on the client side
+  if (typeof window === 'undefined' || typeof document === 'undefined') {
+    return;
+  }
+
   const ctaLink = document.querySelector('.see-all-link');
   
   if (ctaLink) {
@@ -133,6 +148,11 @@ export function ctaInteractions() {
 
 // Performance optimization
 export function optimizePerformance() {
+  // Check if we're on the client side
+  if (typeof window === 'undefined' || typeof document === 'undefined') {
+    return;
+  }
+
   // Throttle mousemove events
   let ticking = false;
   
@@ -177,6 +197,11 @@ export function optimizePerformance() {
 
 // Initialize all animations
 export function initTestimonialsAnimations() {
+  // Check if we're on the client side
+  if (typeof window === 'undefined' || typeof document === 'undefined') {
+    return;
+  }
+
   testimonialsAnimations();
   cardHoverEffects();
   ctaInteractions();

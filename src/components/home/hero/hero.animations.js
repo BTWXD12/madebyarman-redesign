@@ -2,6 +2,11 @@
 
 // Main fade-in animation for text elements with staggered delays
 export function heroFadeIn() {
+  // Check if we're on the client side
+  if (typeof window === 'undefined' || typeof document === 'undefined') {
+    return;
+  }
+
   const elements = [
     { selector: '.intro-text', delay: 200 },
     { selector: '.hero-headline', delay: 400 },
@@ -39,6 +44,11 @@ export function heroFadeIn() {
 
 // Button hover effects and interactions
 export function buttonHoverEffects() {
+  // Check if we're on the client side
+  if (typeof window === 'undefined' || typeof document === 'undefined') {
+    return;
+  }
+
   const primaryBtn = document.querySelector('.cta-primary');
   const secondaryBtn = document.querySelector('.cta-secondary');
 

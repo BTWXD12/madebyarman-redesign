@@ -19,7 +19,7 @@ export default function Testimonials() {
   const testimonials = [
     {
       id: 1,
-      quote: "Arman's AI integration cut our processing time by 70% in just one week.",
+      quote: "Arman&apos;s AI integration cut our processing time by 70% in just one week.",
       author: {
         name: "Sarah Thompson",
         role: "Product Manager",
@@ -53,7 +53,7 @@ export default function Testimonials() {
         <div className="testimonials-header">
           <h2 className="testimonials-title">Client Testimonials</h2>
           <p className="testimonials-subtitle">
-            Real feedback from clients who've experienced the quality and professionalism of my work
+            Real feedback from clients who&apos;ve experienced the quality and professionalism of my work
           </p>
         </div>
         
@@ -77,7 +77,7 @@ export default function Testimonials() {
 
               {/* Testimonial Content */}
               <blockquote className="quote">
-                "{testimonial.quote}"
+                &ldquo;{testimonial.quote}&rdquo;
               </blockquote>
               
               <div className="author">
